@@ -1,6 +1,6 @@
 - parameter_space.py: contains the python class ParameterSpace to define a python object for the
-  set of features to be predicted, i.e., the dimensions of the parameter space of the modeled (joint)
-  distribution.
+  set of features. This is used for the predicted properties, i.e., the dimensions of the parameter
+  space of the modeled (joint) distribution.
 - get_prediction.py: example script to load the models, generate predicted samples, and compare with
   the reference.
 

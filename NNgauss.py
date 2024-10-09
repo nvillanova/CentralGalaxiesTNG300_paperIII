@@ -30,7 +30,7 @@ class NNgauss(ParameterSpace):
         if self.label is None:
             self.label = model_name
 
-        self.dir_name = '{}/{}/'.format(self.model_name,
+        self.dir_name = 'models/{}/{}/'.format(self.model_name,
                                         self.name_of_event_space)
 
     def get_model_dict(self):

@@ -1,5 +1,3 @@
-from cProfile import label
-
 from NF import NF
 from NNgauss import NNgauss
 

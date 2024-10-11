@@ -1,6 +1,10 @@
 from NF import NF
 from NNgauss import NNgauss
+<<<<<<< HEAD
 # from NNclass import NNclass
+=======
+from NNclass import NNclass
+>>>>>>> 5af7d3e (Initial commit)
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -17,7 +21,11 @@ input_data = dataset[input_props].to_numpy()
 # Models
 # the output shape is (n_samples, n_simulations, n_dimensions)
 nngauss = NNgauss(target_props, trial=45)
+<<<<<<< HEAD
 # nnclass = NNclass(target_props, trial=77)
+=======
+nnclass = NNclass(target_props, trial=77)
+>>>>>>> 5af7d3e (Initial commit)
 nf = NF(target_props, trial=99)
 
 nngauss_pred = nngauss.get_sample(input_data, n_samples=10)

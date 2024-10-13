@@ -651,7 +651,7 @@ def save_voronoi(i, num_iter, hival_object, pos_aux,
 def save_classes_and_dispersions(hival_object, save=True):
 
     print('Loading attributes.')
-    voronoi_folder = hival_object.voronoi_folder()
+    voronoi_folder = hival_object.voronoi_folder
     target_norm = hival_object.target_norm()
     particles = hival_object.particles()
     target_props = hival_object.target_props
@@ -754,7 +754,9 @@ def run_HiVAl(data, target_props, num_iter=30, min_num_classes=5000):
             if save:
                 hival_object.nbin = num_classes_list[iter]
                 print('\n# domains: ', hival_object.nbin)
+                hival_object.voronoi_folder = voronoi_folder_props + f'{hival_object.nbin}_classes/'
                 voronoi_folder = hival_object.voronoi_folder
+                print(voronoi_folder)
                 particles_list = hival_object.get_particles_list()
 
                 # Save classes (ytrain) and dispersions of each cell

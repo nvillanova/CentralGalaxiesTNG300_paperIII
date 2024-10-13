@@ -7,7 +7,7 @@
       <excludeFolder url="file://$MODULE_DIR$/NNclass/smass_color_sSFR_radius/results_interm_mass" />
       <excludeFolder url="file://$MODULE_DIR$/NNclass/smass_color_sSFR_radius/results_low_mass" />
     </content>
-    <orderEntry type="jdk" jdkName="meu_ambiente" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="update_tf" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

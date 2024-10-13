@@ -8,9 +8,6 @@ compute_scores.py
 compute_scores2.py
 contour.py
 contour_single.py
-optuna_NNclass.py
-optuna_NNclass_fixed_class.py
-optuna_NNgauss.py
 plot_scores.py
 plot_scores_draft.py
 population_selection.py

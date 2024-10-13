@@ -1,21 +1,32 @@
 # Libraries
-import auxiliary_dictionaries
 from parameter_space import ParameterSpace
-from utils import vectorize_get_random_particle, exclude_nans
 
 import numpy as np
 import pandas as pd
 import os
 import time
 import matplotlib.pyplot as plt
-import matplotlib as mpl
-import matplotlib.cm as cm
 from scipy.spatial import Voronoi, voronoi_plot_2d, ConvexHull, Delaunay
 from scipy.stats import pearsonr
 
-import tensorflow as tf
 import tensorflow_probability as tfp
 tfd = tfp.distributions
+
+
+def get_random_particle(particles_array):
+    """
+    Function to sample a particle from a list of particles (domain).
+    :particles_array: list of particles that build up a class; "particles[ind_class]".
+    """
+    return np.random.choice(particles_array)
+
+
+# Compute for many domains
+vectorize_get_random_particle = np.vectorize(get_random_particle)
+
+
+def exclude_nans(particles_array):
+    return particles_array[~np.isnan(particles_array)]
 
 
 class HiVAl(ParameterSpace):

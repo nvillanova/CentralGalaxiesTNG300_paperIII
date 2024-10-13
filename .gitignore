@@ -13,7 +13,6 @@ plot_scores_draft.py
 population_selection.py
 quick_plots.py
 scores.py
-utils.py
 
 readme.txt
 auxiliary_dictionaries.py

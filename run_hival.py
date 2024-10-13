@@ -20,6 +20,8 @@ data = pd.DataFrame(np.vstack((data_Normal, data_Uniform)), columns=['x', 'y', '
 # Visualize data
 plt.figure(figsize=(4, 4))
 plt.scatter(data['x'], data['y'], s=1)
+plt.xlabel('x')
+plt.ylabel('y')
 plt.xlim(-2.5, 5)
 plt.ylim(-2.5, 5)
 plt.show()

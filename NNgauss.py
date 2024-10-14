@@ -1,11 +1,10 @@
 # Libraries
 from parameter_space import ParameterSpace
 
+import os
 import pandas as pd
 import joblib
 import tensorflow as tf
-from keras import Model
-from keras.layers import Dense
 import tensorflow_probability as tfp
 
 tfd = tfp.distributions
@@ -15,6 +14,7 @@ tfpl = tfp.layers
 class NNgauss(ParameterSpace):
 
     def __init__(self, target_props, trial,
+                 sats=False,
                  model_name='NNgauss', color='yellowgreen', cmap='GrBu',
                  marker='o', label=None):
 
@@ -22,6 +22,7 @@ class NNgauss(ParameterSpace):
 
         self.trial = trial
 
+        self.sats = sats
         self.model_name = model_name
         self.color = color
         self.cmap = cmap
@@ -33,6 +34,11 @@ class NNgauss(ParameterSpace):
         self.dir_name = 'models/{}/{}/'.format(self.model_name,
                                         self.name_of_event_space)
 
+        if sats:
+            self.dir_name = '{}/{}/sats/'.format(self.model_name,
+                                                 self.name_of_event_space)
+
+
     def get_model_dict(self):
         dir_name = self.dir_name
 
@@ -40,11 +46,18 @@ class NNgauss(ParameterSpace):
         model_dict = pd.read_csv(dir_name + 'trial_dict_{}.csv'.format(self.trial))
         return model_dict
 
+    def input_features(self):
+        dir_name = self.dir_name
+        return pd.read_csv(dir_name + 'input_props_trial{}.csv'.format(self.trial)).columns.to_numpy()
+
     def x_scaler(self):
 
         dir_name = self.dir_name
 
-        x_scaler_filename = dir_name + "X_scaler.save"
+        x_scaler_filename = dir_name + f"X_scaler_trial{self.trial}.save"
+        if not os.path.exists(x_scaler_filename):
+            x_scaler_filename = dir_name + f"X_scaler.save"
+
         x_scaler_loaded = joblib.load(x_scaler_filename)
 
         return x_scaler_loaded
@@ -57,9 +70,10 @@ class NNgauss(ParameterSpace):
 
         return y_scaler_loaded
 
-    def get_model(self):
+    def load_model_weights(self):
         """
         Load model's weights.
+        Build architecture using the model dictionary and load the weights.
         """
 
         # Load model dictionary
@@ -88,35 +102,64 @@ class NNgauss(ParameterSpace):
         x = tf.keras.layers.Dense(hidden_units[0],
                                   activation='relu',
                                   kernel_regularizer=tf.keras.regularizers.L2(l2=hidden_l2[0]))(inputs)
+
         # Hidden layers
         for nl in range(1, n_layers):
             x = tf.keras.layers.Dense(hidden_units[nl],
                                       activation='relu',
                                       kernel_regularizer=tf.keras.regularizers.L2(l2=hidden_l2[nl]))(x)
 
-        x = Dense(tfpl.MultivariateNormalTriL.params_size(int(self.Ndims)))(x)
-        x = tfp.layers.DistributionLambda(lambda t:
-                                          tfd.MultivariateNormalTriL(loc=t[..., :int(self.Ndims)],
-                                                                     scale_tril=tfp.math.fill_triangular(t[...,
-                                                                                                         int(self.Ndims):])))(x)
+        # Output layer for parameters (loc and scale_tril)
+        params_size = tfpl.MultivariateNormalTriL.params_size(int(self.Ndims))
+        x = tf.keras.layers.Dense(params_size)(x)
 
-        loaded_model = Model(inputs=inputs, outputs=x)
+        loaded_model = tf.keras.models.Model(inputs=inputs, outputs=x)
 
         # Load saved weights
-        loaded_model.load_weights(self.dir_name + 'weights_trial{}.h5'.format(self.trial))
+        filename = self.dir_name + 'weights_trial{}.weights.h5'.format(self.trial)
+        if not os.path.exists(filename):
+            filename = self.dir_name + 'weights_trial{}.h5'.format(self.trial)
+
+        loaded_model.load_weights(filename)
 
         return loaded_model
 
-    def get_sample(self, input_data, n_samples=1):
+    def get_model(self, input_data):
 
-        model = self.get_model()
+        model = self.load_model_weights()
 
+        # Scale input parameters
         x_scaler_loaded = self.x_scaler()
-        y_scaler_loaded = self.y_scaler()
-
         input_data_scaled = x_scaler_loaded.transform(input_data)
 
-        ypred_scaled = model(input_data_scaled).sample(n_samples).numpy()
+        # Predict mean and covariance matrix
+        predictions = model.predict(input_data_scaled)
+        loc = predictions[..., :int(self.Ndims)]
+        scale_tril = tfp.math.fill_triangular(predictions[..., int(self.Ndims):])
+
+        # Create the MultivariateNormalTriL distribution with the pred. parameters
+        return tfd.MultivariateNormalTriL(loc=loc, scale_tril=scale_tril)
+
+    def get_log_prob(self, input_data, target_data):
+        model = self.get_model(input_data)
+
+        y_scaler_loaded = self.y_scaler()
+        target_data_scaled = y_scaler_loaded.transform(target_data)
+
+        return model.log_prob(target_data_scaled).numpy()
+
+    def get_sample(self, input_data, n_samples=1):
+        """
+        Load model, get scaled sample and revert scale.
+        :param input_data: input data to apply model
+        :param n_samples: number of samples to draw from the distribution
+        :return: predictions (n_samples, n_sims, n_dims)
+        """
+
+        model = self.get_model(input_data)
+        y_scaler_loaded = self.y_scaler()
+
+        ypred_scaled = model.sample(n_samples).numpy()
         ypred = y_scaler_loaded.inverse_transform(ypred_scaled.reshape(n_samples * len(input_data), self.Ndims))
         ypred = ypred.reshape(n_samples, len(input_data), self.Ndims)
 

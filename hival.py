@@ -1,21 +1,32 @@
 # Libraries
-import auxiliary_dictionaries
 from parameter_space import ParameterSpace
-from utils import vectorize_get_random_particle, exclude_nans
 
 import numpy as np
 import pandas as pd
 import os
 import time
 import matplotlib.pyplot as plt
-import matplotlib as mpl
-import matplotlib.cm as cm
 from scipy.spatial import Voronoi, voronoi_plot_2d, ConvexHull, Delaunay
 from scipy.stats import pearsonr
 
-import tensorflow as tf
 import tensorflow_probability as tfp
 tfd = tfp.distributions
+
+
+def get_random_particle(particles_array):
+    """
+    Function to sample a particle from a list of particles (domain).
+    :particles_array: list of particles that build up a class; "particles[ind_class]".
+    """
+    return np.random.choice(particles_array)
+
+
+# Compute for many domains
+vectorize_get_random_particle = np.vectorize(get_random_particle)
+
+
+def exclude_nans(particles_array):
+    return particles_array[~np.isnan(particles_array)]
 
 
 class HiVAl(ParameterSpace):
@@ -640,7 +651,7 @@ def save_voronoi(i, num_iter, hival_object, pos_aux,
 def save_classes_and_dispersions(hival_object, save=True):
 
     print('Loading attributes.')
-    voronoi_folder = hival_object.voronoi_folder()
+    voronoi_folder = hival_object.voronoi_folder
     target_norm = hival_object.target_norm()
     particles = hival_object.particles()
     target_props = hival_object.target_props
@@ -743,7 +754,9 @@ def run_HiVAl(data, target_props, num_iter=30, min_num_classes=5000):
             if save:
                 hival_object.nbin = num_classes_list[iter]
                 print('\n# domains: ', hival_object.nbin)
+                hival_object.voronoi_folder = voronoi_folder_props + f'{hival_object.nbin}_classes/'
                 voronoi_folder = hival_object.voronoi_folder
+                print(voronoi_folder)
                 particles_list = hival_object.get_particles_list()
 
                 # Save classes (ytrain) and dispersions of each cell

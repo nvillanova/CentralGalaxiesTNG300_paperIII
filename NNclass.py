@@ -2,6 +2,7 @@
 from parameter_space import ParameterSpace
 from hival import HiVAl
 
+import os
 import numpy as np
 import pandas as pd
 import tensorflow as tf
@@ -33,7 +34,7 @@ class NNclass(ParameterSpace):
 
         self.dir_name = f'models/{self.model_name}/{self.name_of_event_space}/'
         if nbin is not None:
-            self.dir_name = f'models/{self.model_name}/{self.name_of_event_space}_{self.nbin}/'
+            self.dir_name = f'{self.model_name}/{self.name_of_event_space}_{self.nbin}/'
 
     def get_model_dict(self):
         dir_name = self.dir_name
@@ -42,9 +43,14 @@ class NNclass(ParameterSpace):
         model_dict = pd.read_csv(dir_name + 'trial_dict_{}.csv'.format(self.trial))
         return model_dict
 
-    def get_model(self):
+    def input_features(self):
+        dir_name = self.dir_name
+        return pd.read_csv(dir_name + 'input_props_trial{}.csv'.format(self.trial)).columns.to_numpy()
+
+    def load_model_weights(self):
         """
         Load model's weights.
+        Build architecture using the model dictionary and load the weights.
         """
 
         # Load model dictionary
@@ -81,33 +87,38 @@ class NNclass(ParameterSpace):
                                       kernel_regularizer=tf.keras.regularizers.L2(l2=int(hidden_l2[nl])))(x)
 
         x = tf.keras.layers.Dense(int(nbin))(x)
-        x = tfpl.OneHotCategorical(int(nbin))(x)
 
-        loaded_model = Model(inputs=inputs, outputs=x)
+        loaded_model = tf.keras.models.Model(inputs=inputs, outputs=x)
 
         # Load saved weights
-        loaded_model.load_weights('models/'+ self.dir_name + 'weights_trial{}.h5'.format(self.trial))
+        filename = self.dir_name + 'weights_trial{}.weights.h5'.format(self.trial)
+        if not os.path.exists(filename):
+            filename = self.dir_name + 'weights_trial{}.h5'.format(self.trial)
+
+        loaded_model.load_weights(filename)
 
         return loaded_model
 
-    def get_sample(self, data,
+    def get_model(self, input_data):
+
+        model = self.load_model_weights()
+        predictions = model.predict(input_data)
+
+        # Create the MultivariateNormalTriL distribution with the pred. parameters
+        return tfd.OneHotCategorical(logits=predictions)
+
+    def get_sample(self, input_data,
                    num_domain_sample=1, num_values_sample=1):
 
         """
         total number of samples == n_samples = num_domain_sample * num_values_sample
         """
 
-        n_samples = int(num_domain_sample * num_values_sample)
-        model = self.get_model()
+        predicted_distribution = self.get_model(input_data)
         nbin = self.get_model_dict()['nbin'].to_numpy()[0]
         hival_object = HiVAl(target_props=self.target_props, nbin=nbin)
 
         if self.Ndims > 1:
-
-            # elegante, porem lerdo (carrega os arquivos muitas vezes)
-
-            model = self.get_model()
-            predicted_distribution = model(data)
 
             continuous_value_list = []
             for r in range(num_domain_sample):
@@ -128,28 +139,8 @@ class NNclass(ParameterSpace):
         # Univariate
         else:
             print('Sampling from uni-variate distribution')
-            # probs = model(data).mean().numpy()
-            # nbin = hival_object.nbin
-            # print(nbin)
-            # bin_edges = hival_object.bin_edges()
-            # dist = tfp.distributions.OneHotCategorical(probs=probs)
-            #
-            # pred_cat = dist.sample(num_domain_sample)
-            # pred_class = np.argmax(pred_cat, axis=2)
-            # print(bin_edges.shape)
-            #
-            # # Sample continuous values
-            # a = bin_edges[pred_class.T[:, :, None]]
-            # b = bin_edges[(pred_class.T + 1)[:, :, None]]
-            #
-            # values = (b - a) * np.random.random_sample((len(data), pred_class.shape[0], num_values_sample)) + a
-            #
-            # sample = values.reshape(len(data), n_samples).T
-            # sample = sample[:, :, None]
-
 
             bin_edges = hival_object.bin_edges().to_numpy()
-            predicted_distribution = model(data)
 
             continuous_value_list = []
             for r in range(num_domain_sample):
@@ -163,7 +154,7 @@ class NNclass(ParameterSpace):
                 a = bin_edges[predicted_class]
                 b = bin_edges[predicted_class + 1]
 
-                continuous_value = (b - a) * np.random.random_sample((len(data), num_values_sample)) + a
+                continuous_value = (b - a) * np.random.random_sample((len(input_data), num_values_sample)) + a
 
                 continuous_value_list.append(continuous_value.T)
 

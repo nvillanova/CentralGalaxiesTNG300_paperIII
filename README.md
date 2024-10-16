@@ -1,9 +1,10 @@
-This repository contains the material presented in Rodrigues, de Santi, Abramo and Montero-Dorta 2023.
+This repository contains the material presented in Rodrigues, de Santi, Abramo and Montero-Dorta 2024.
 In this work we compare three machine learning methods (NNgauss, NNclass, NF) to model the (joint) 
 distribution of central galaxy properties based on the host dark matter halo properties using the 
 IllustrisTNG300 simulation.
 With the available material, one can load the models (weights) and generate samples of stellar mass, 
-color, sSFR and radius.
+color, sSFR and radius given a set of input halos. In case the user does not have all halo input features 
+available, the missing 
 
 **Files description:**
 

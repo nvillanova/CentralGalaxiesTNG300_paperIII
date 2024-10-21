@@ -17,3 +17,5 @@ scores.py
 readme.txt
 auxiliary_dictionaries.py
 subset_tng300.csv
+get_prediction.py
+run_hival.py

@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e905ee0-04f0-419b-a5b5-b81f7ecb576a" name="Changes" comment="Trying to fix merge problem.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0e905ee0-04f0-419b-a5b5-b81f7ecb576a" name="Changes" comment="Trying again." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,6 +53,7 @@
     &quot;Python.run_hival.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -205,6 +204,9 @@
       <workItem from="1729520848429" duration="603000" />
       <workItem from="1729526916348" duration="559000" />
       <workItem from="1729527533333" duration="137000" />
+      <workItem from="1729542583222" duration="78000" />
+      <workItem from="1729542661510" duration="28000" />
+      <workItem from="1729542692151" duration="233000" />
     </task>
     <task id="LOCAL-00001" summary="Update tensorflow version.">
       <option name="closed" value="true" />
@@ -294,7 +296,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729527626391</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Trying again.">
+      <option name="closed" value="true" />
+      <created>1729542101950</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1729542101950</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,32 +384,7 @@
                   <entry key="structure">
                     <value>
                       <list>
-                        <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/data" />
-                        <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/voronoi_targets" />
-                        <option value="file:$PROJECT_DIR$/get_predictions.ipynb" />
-                        <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/results" />
-                        <option value="file:$PROJECT_DIR$/run_hival.ipynb" />
-                        <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/.ipynb_checkpoints" />
-                        <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/models" />
-                        <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/NNgauss" />
-                        <option value="file:$PROJECT_DIR$/NNclass.py" />
-                        <option value="file:$PROJECT_DIR$/parameter_space.py" />
                         <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/.idea" />
-                        <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/NF" />
-                        <option value="file:$PROJECT_DIR$/NF.py" />
-                        <option value="file:$PROJECT_DIR$/subtest_tng300.csv" />
-                        <option value="file:$PROJECT_DIR$/hival.py" />
-                        <option value="file:$PROJECT_DIR$/README.md" />
-                        <option value="file:$PROJECT_DIR$/subtest_tng300_inputs_missing_Delta3_h.csv" />
-                        <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/input_features_sampler" />
-                        <option value="file:$PROJECT_DIR$/get_prediction.py" />
-                        <option value="file:$PROJECT_DIR$/subtest_tng300_inputs.csv" />
-                        <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/NNclass" />
-                        <option value="file:$PROJECT_DIR$/NNgauss.py" />
-                        <option value="file:$PROJECT_DIR$/run_hival.py" />
-                        <option value="file:$PROJECT_DIR$/.gitignore" />
-                        <option value="file:$PROJECT_DIR$/missing_features.py" />
-                        <option value="file:$PROJECT_DIR$/subtest_tng300_targets.csv" />
                       </list>
                     </value>
                   </entry>
@@ -419,10 +404,11 @@
     <MESSAGE value="Notebooks." />
     <MESSAGE value="Merge branch 'develop'&#10;&#10;# Conflicts:&#10;#&#9;.idea/CentralGalaxiesTNG300_paperIII.iml&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/vcs.xml&#10;#&#9;get_prediction.py&#10;#&#9;run_hival.py" />
     <MESSAGE value="Trying to fix merge problem." />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying to fix merge problem." />
+    <MESSAGE value="Trying again." />
+    <option name="LAST_COMMIT_MESSAGE" value="Trying again." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CentralGalaxiesTNG300_paperIII$get_prediction.coverage" NAME="get_prediction Coverage Results" MODIFIED="1729187577762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CentralGalaxiesTNG300_paperIII$get_prediction.coverage" NAME="get_prediction Coverage Results" MODIFIED="1729542831411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CentralGalaxiesTNG300_paperIII$run_hival.coverage" NAME="run_hival Coverage Results" MODIFIED="1728847522208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CentralGalaxiesTNG300_paperIII$missing_features.coverage" NAME="missing_features Coverage Results" MODIFIED="1728940574633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

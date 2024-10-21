@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e905ee0-04f0-419b-a5b5-b81f7ecb576a" name="Changes" comment="Updating notebooks.">
+    <list default="true" id="0e905ee0-04f0-419b-a5b5-b81f7ecb576a" name="Changes" comment="Trying to fix merge problem.">
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -206,6 +206,7 @@
       <workItem from="1729520848429" duration="603000" />
       <workItem from="1729526916348" duration="559000" />
       <workItem from="1729527533333" duration="137000" />
+      <workItem from="1729527674433" duration="1030000" />
     </task>
     <task id="LOCAL-00001" summary="Update tensorflow version.">
       <option name="closed" value="true" />
@@ -295,7 +296,23 @@
       <option name="project" value="LOCAL" />
       <updated>1729527626391</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Trying to fix merge problem.">
+      <option name="closed" value="true" />
+      <created>1729527702430</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1729527702430</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Trying to fix merge problem.">
+      <option name="closed" value="true" />
+      <created>1729527807808</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1729527807808</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,6 +324,11 @@
         <entry key="Branch">
           <value>
             <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="origin/master" />
@@ -368,7 +390,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -420,11 +442,10 @@
     <MESSAGE value="Notebooks." />
     <MESSAGE value="Merge branch 'develop'&#10;&#10;# Conflicts:&#10;#&#9;.idea/CentralGalaxiesTNG300_paperIII.iml&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/vcs.xml&#10;#&#9;get_prediction.py&#10;#&#9;run_hival.py" />
     <MESSAGE value="Trying to fix merge problem." />
-    <MESSAGE value="Updating notebooks." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating notebooks." />
+    <option name="LAST_COMMIT_MESSAGE" value="Trying to fix merge problem." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CentralGalaxiesTNG300_paperIII$get_prediction.coverage" NAME="get_prediction Coverage Results" MODIFIED="1729187577762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CentralGalaxiesTNG300_paperIII$get_prediction.coverage" NAME="get_prediction Coverage Results" MODIFIED="1729528729269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CentralGalaxiesTNG300_paperIII$run_hival.coverage" NAME="run_hival Coverage Results" MODIFIED="1728847522208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CentralGalaxiesTNG300_paperIII$missing_features.coverage" NAME="missing_features Coverage Results" MODIFIED="1728940574633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

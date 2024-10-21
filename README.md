@@ -33,12 +33,14 @@ color, sSFR, and radius, given a set of input halo properties.
   HiVAL Drive: https://drive.google.com/drive/folders/1GYOXChEAzbyNW5Pr2CNRadGVn8WksPtz?usp=drive_link 
 
   **Data files:**
-- subtest_tng300_inputs.csv: contain the input halo properties of 10 instances randomly selected from our test set.
-- subtest_tng300_targets.csv: contain the output galaxy properties of the same 10 instances randomly selected from 
+- subtest_tng300_inputs.csv: contains the input halo properties of 10 instances randomly selected from our test set.
+- subtest_tng300_targets.csv: contains the output galaxy properties of the same 10 instances randomly selected from 
   our test set.
 - subtest_tng300_inputs.csv: same as subtest_tng300_inputs.csv, excluding the overdensity feature to illustrate how 
 to use the models in case there are missing features (see below).
 
 
 **Missing features**: in case the user does not have all halo properties computed, we make available a code to replace 
-the missing feature(s) by a random sample of the distribution of the feature (learned with NF). 
+the missing feature(s) by a random sample of the distribution of the feature (learned with NF). This works similarly to 
+permutation feature importance, where a feature is replaced with noise (sampled from the same distribution of the 
+feature).

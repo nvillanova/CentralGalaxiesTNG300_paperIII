@@ -38,7 +38,7 @@ class NF(ParameterSpace):
         if self.label is None:
             self.label = model_name
 
-        self.dir_name = '{}/{}/'.format(self.model_name,
+        self.dir_name = 'models/{}/{}/'.format(self.model_name,
                                         self.name_of_event_space)
 
     def x_scaler(self):

@@ -32,7 +32,7 @@ class NNclass(ParameterSpace):
         if self.label is None:
             self.label = model_name
 
-        self.dir_name = f'{self.model_name}/{self.name_of_event_space}/'
+        self.dir_name = f'models/{self.model_name}/{self.name_of_event_space}/'
         if nbin is not None:
             self.dir_name = f'{self.model_name}/{self.name_of_event_space}_{self.nbin}/'
 

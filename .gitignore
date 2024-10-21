@@ -4,6 +4,7 @@ __pychache__
 data/
 stacked_predictions/
 NNclass/smass/
+.virtual_documents
 *.iml
 compute_scores.py
 compute_scores2.py

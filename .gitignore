@@ -1,6 +1,5 @@
 .idea
 **/__pycache__
-__pychache__
 data/
 stacked_predictions/
 NNclass/smass/

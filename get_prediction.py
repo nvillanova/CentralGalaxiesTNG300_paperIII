@@ -2,8 +2,6 @@
 The input data must be sorted according to:
 Virial mass, Concentration, Spin, Age, Overdensity,
 as a pandas.DataFrame with columns named as: M_h, C_h, S_h, z_h, Delta3_h.
-
-If there are any missing features in the input dataset, it will be replaced by random values.
 """
 
 from NF import NF

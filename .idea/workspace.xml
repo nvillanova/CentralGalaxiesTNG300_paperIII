@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e905ee0-04f0-419b-a5b5-b81f7ecb576a" name="Changes" comment="Missing features.">
-      <change beforePath="$PROJECT_DIR$/get_predictions.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/get_predictions.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_hival.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/run_hival.ipynb" afterDir="false" />
+    <list default="true" id="0e905ee0-04f0-419b-a5b5-b81f7ecb576a" name="Changes" comment="Notebooks.">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_prediction.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +57,7 @@
     "Python.missing_features.executor": "Run",
     "Python.run_hival.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "develop",
+    "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -204,6 +206,7 @@
       <workItem from="1729187571953" duration="767000" />
       <workItem from="1729516461586" duration="3857000" />
       <workItem from="1729520848429" duration="603000" />
+      <workItem from="1729526916348" duration="559000" />
     </task>
     <task id="LOCAL-00001" summary="Update tensorflow version.">
       <option name="closed" value="true" />
@@ -276,11 +279,111 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+        <entry key="Paths">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/data" />
+                  <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/voronoi_targets" />
+                  <option value="file:$PROJECT_DIR$/get_predictions.ipynb" />
+                  <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/results" />
+                  <option value="file:$PROJECT_DIR$/run_hival.ipynb" />
+                  <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/.ipynb_checkpoints" />
+                  <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/models" />
+                  <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/NNgauss" />
+                  <option value="file:$PROJECT_DIR$/NNclass.py" />
+                  <option value="file:$PROJECT_DIR$/parameter_space.py" />
+                  <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/.idea" />
+                  <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/NF" />
+                  <option value="file:$PROJECT_DIR$/NF.py" />
+                  <option value="file:$PROJECT_DIR$/subtest_tng300.csv" />
+                  <option value="file:$PROJECT_DIR$/hival.py" />
+                  <option value="file:$PROJECT_DIR$/README.md" />
+                  <option value="file:$PROJECT_DIR$/subtest_tng300_inputs_missing_Delta3_h.csv" />
+                  <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/input_features_sampler" />
+                  <option value="file:$PROJECT_DIR$/get_prediction.py" />
+                  <option value="file:$PROJECT_DIR$/subtest_tng300_inputs.csv" />
+                  <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/NNclass" />
+                  <option value="file:$PROJECT_DIR$/NNgauss.py" />
+                  <option value="file:$PROJECT_DIR$/run_hival.py" />
+                  <option value="file:$PROJECT_DIR$/.gitignore" />
+                  <option value="file:$PROJECT_DIR$/missing_features.py" />
+                  <option value="file:$PROJECT_DIR$/subtest_tng300_targets.csv" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/.idea" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/data" />
+                        <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/voronoi_targets" />
+                        <option value="file:$PROJECT_DIR$/get_predictions.ipynb" />
+                        <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/results" />
+                        <option value="file:$PROJECT_DIR$/run_hival.ipynb" />
+                        <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/.ipynb_checkpoints" />
+                        <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/models" />
+                        <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/NNgauss" />
+                        <option value="file:$PROJECT_DIR$/NNclass.py" />
+                        <option value="file:$PROJECT_DIR$/parameter_space.py" />
+                        <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/.idea" />
+                        <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/NF" />
+                        <option value="file:$PROJECT_DIR$/NF.py" />
+                        <option value="file:$PROJECT_DIR$/subtest_tng300.csv" />
+                        <option value="file:$PROJECT_DIR$/hival.py" />
+                        <option value="file:$PROJECT_DIR$/README.md" />
+                        <option value="file:$PROJECT_DIR$/subtest_tng300_inputs_missing_Delta3_h.csv" />
+                        <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/input_features_sampler" />
+                        <option value="file:$PROJECT_DIR$/get_prediction.py" />
+                        <option value="file:$PROJECT_DIR$/subtest_tng300_inputs.csv" />
+                        <option value="dir:/home/nvilla/PycharmProjects/CentralGalaxiesTNG300_paperIII/NNclass" />
+                        <option value="file:$PROJECT_DIR$/NNgauss.py" />
+                        <option value="file:$PROJECT_DIR$/run_hival.py" />
+                        <option value="file:$PROJECT_DIR$/.gitignore" />
+                        <option value="file:$PROJECT_DIR$/missing_features.py" />
+                        <option value="file:$PROJECT_DIR$/subtest_tng300_targets.csv" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

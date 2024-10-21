@@ -29,8 +29,8 @@ color, sSFR, and radius, given a set of input halo properties.
 - hival.py: contains the HiVAl python class and the functions to run HiVAl.
 - run_hival.ipynb: script to run HiVAl over a dataset.
 
-  HiVAl files are stored at: https://drive.google.com/drive/folders/1ljPTFo2qYB-dA2VXEcsIWhLCsOoi9fJj?usp=drive_link
-  It contains only the files to run the best trial of NNclass.
+  HiVAl files are stored at:
+  HiVAL Drive: https://drive.google.com/drive/folders/1GYOXChEAzbyNW5Pr2CNRadGVn8WksPtz?usp=drive_link 
 
   **Data files:**
 - subtest_tng300_inputs.csv: contains the input halo properties of 10 instances randomly selected from our test set.

@@ -3,7 +3,6 @@
 __pychache__
 data/
 stacked_predictions/
-voronoi_targets/
 NNclass/smass/
 *.iml
 compute_scores.py

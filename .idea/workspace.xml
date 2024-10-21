@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e905ee0-04f0-419b-a5b5-b81f7ecb576a" name="Changes" comment="Notebooks.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="0e905ee0-04f0-419b-a5b5-b81f7ecb576a" name="Changes" comment="Trying to fix merge problem.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_prediction.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_prediction.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,21 +48,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.get_prediction.executor": "Run",
-    "Python.missing_features.executor": "Run",
-    "Python.run_hival.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.get_prediction.executor&quot;: &quot;Run&quot;,
+    &quot;Python.missing_features.executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_hival.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RdControllerToolWindowsLayoutState" isNewUi="true">
     <layout>
       <window_info id="Bookmarks" show_stripe_button="false" side_tool="true" />
@@ -207,6 +204,7 @@
       <workItem from="1729516461586" duration="3857000" />
       <workItem from="1729520848429" duration="603000" />
       <workItem from="1729526916348" duration="559000" />
+      <workItem from="1729527533333" duration="137000" />
     </task>
     <task id="LOCAL-00001" summary="Update tensorflow version.">
       <option name="closed" value="true" />
@@ -272,7 +270,31 @@
       <option name="project" value="LOCAL" />
       <updated>1729520321664</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Merge branch 'develop'&#10;&#10;# Conflicts:&#10;#&#9;.idea/CentralGalaxiesTNG300_paperIII.iml&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/vcs.xml&#10;#&#9;get_prediction.py&#10;#&#9;run_hival.py">
+      <option name="closed" value="true" />
+      <created>1729527590518</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1729527590518</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Trying to fix merge problem.">
+      <option name="closed" value="true" />
+      <created>1729527618283</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1729527618283</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Trying to fix merge problem.">
+      <option name="closed" value="true" />
+      <created>1729527626391</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1729527626391</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,7 +416,10 @@
     <MESSAGE value="HiVAl fake data." />
     <MESSAGE value="Fig." />
     <MESSAGE value="Missing features." />
-    <option name="LAST_COMMIT_MESSAGE" value="Missing features." />
+    <MESSAGE value="Notebooks." />
+    <MESSAGE value="Merge branch 'develop'&#10;&#10;# Conflicts:&#10;#&#9;.idea/CentralGalaxiesTNG300_paperIII.iml&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/vcs.xml&#10;#&#9;get_prediction.py&#10;#&#9;run_hival.py" />
+    <MESSAGE value="Trying to fix merge problem." />
+    <option name="LAST_COMMIT_MESSAGE" value="Trying to fix merge problem." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CentralGalaxiesTNG300_paperIII$get_prediction.coverage" NAME="get_prediction Coverage Results" MODIFIED="1729187577762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

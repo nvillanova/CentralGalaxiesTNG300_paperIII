@@ -1,4 +1,4 @@
-.idea
+.idea/
 **/__pycache__
 data/
 stacked_predictions/

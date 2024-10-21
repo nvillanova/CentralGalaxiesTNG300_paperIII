@@ -27,10 +27,9 @@ color, sSFR, and radius, given a set of input halo properties.
 
 **HiVAl files:**
 - hival.py: contains the HiVAl python class and the functions to run HiVAl.
-- run_hival.ipynb: script to run HiVAl over a dataset.
-
-  HiVAl files are stored at:
-  HiVAL Drive: https://drive.google.com/drive/folders/1GYOXChEAzbyNW5Pr2CNRadGVn8WksPtz?usp=drive_link 
+- run_hival.ipynb: script to run HiVAl over a dataset of random (fake) data.
+- voronoi_targets/smass_color_sSFR_radius/: contains the files to generate the galaxy properties samples with NNclass.
+- voronoi_targets/x_y/: contains the output files of the example from run_hival.ipynb.
 
   **Data files:**
 - subtest_tng300_inputs.csv: contains the input halo properties of 10 instances randomly selected from our test set.
@@ -42,5 +41,5 @@ to use the models in case there are missing features (see below).
 
 **Missing features**: in case the user does not have all halo properties computed, we make available a code to replace 
 the missing feature(s) by a random sample of the distribution of the feature (learned with NF). This works similarly to 
-permutation feature importance, where a feature is replaced with noise (sampled from the same distribution of the 
-feature).
+permutation feature importance, where a feature is replaced with noise sampled from the same distribution of the 
+feature.

@@ -1,6 +1,5 @@
 .idea
 **/__pycache__
-data/
 stacked_predictions/
 NNclass/smass/
 .virtual_documents
@@ -17,8 +16,5 @@ scores.py
 
 readme.txt
 auxiliary_dictionaries.py
-subset_tng300_inputs.csv
-subset_tng300_inputs_missing_Delta3_h.csv
-subset_tng300_targets.csv
 get_prediction.py
 run_hival.py

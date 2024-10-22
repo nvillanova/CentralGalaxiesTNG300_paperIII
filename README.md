@@ -42,4 +42,4 @@ to use the models in case there are missing features (see below).
 **Missing features**: in case the user does not have all halo properties computed, we make available a code to replace 
 the missing feature(s) by a random sample of the distribution of the feature (learned with NF). This works similarly to 
 permutation feature importance, where a feature is replaced with noise sampled from the same distribution of the 
-feature.
+feature. Notice that this is not equivalent to marginalizing over the missing feature.
